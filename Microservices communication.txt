@@ -11,4 +11,30 @@ The two microservices communicate each other either
 	Spring boot supports calling one rest service to another rest service using the RestTemplate class. RestTemplate is a synchronised client side 
 	class that is responsible for calling another rest service. RestTemplate supports all HTTP methods such as GET, POST, DELET, PUT, HEAD, etc.
 
+    In general microservices can communicate:
+    Synchronously - REST
+    Asynchronously - via any messaging broker like kafka,RabbitMQ
+	
+	-----------Spring boot RestTemplate Example:-------------
 
+RestTemplateBuilder class is used to createRestTemplate class. RestTemplateBuilder bean automatically created by spring boot.
+
+@Autowired
+
+private RestTemplateBuilder restTemplate;
+
+RestTemplate Get method Example:
+
+@Autowired
+
+private RestTemplateBuilder restTemplate;
+
+public java.util.List<Employee> getAllEmployee() {
+
+Employee[] employee = restTemplate.build()
+
+.getForObject("http://localhost:8080/getAllEmployee", Employee[].class);
+
+return Arrays.asList(employee);
+
+}
