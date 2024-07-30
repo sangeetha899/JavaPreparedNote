@@ -1,0 +1,41 @@
+step 1: Using 'cd' change directory command move to the folder 
+        eg: cd PATH
+step 2: open Github account create new repository.
+step 3: clone the project from remote repository to local using git command "git clone <remote url>"
+step 4: Move to the project folder using "cd PATH" command.
+step 5: git init -- Helps to initialize the git repository in an existing 
+                   or new directory
+
+Git Commands:
+
+->git init-Initialize the local git repository
+	                                                         
+->git clone [repo_url] ----  clone the public repository
+
+->git branch [branch name] -- create a new branch in remote repo
+
+->git checkout [branch name] -- switch to the branch
+
+->git checkout -b [branch name] --- create new branch and move to the new branch
+
+->git status ---- check the status
+
+->git add . ---- Inorder to push changes into the staging area
+
+->git commit -m [commit message]---- commit the changes
+
+->git push origin [branch name]-- push a branch  to your remote repository 
+
+->git pull-- update local repository
+
+  Merging commands:
+  To merge feature from source branch to target branch.First,move to the target 
+  branch.Make sure that you are in target branch.After merging use push command to
+  push into remote repo.
+
+->git checkout [target branch] --- move to the target branch
+
+->git merge [branch name]-- merge a branch into the target branch
+  
+-> git push -- push into remote repo
+
