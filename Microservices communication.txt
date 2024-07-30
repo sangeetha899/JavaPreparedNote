@@ -1,0 +1,14 @@
+How the microservices communicate each other:
+
+Monolithic Architecture: Tightly coupled and diificult to maintain code
+
+Microservice Architecture: Loosely coupled and easy to deploy and maintain code
+
+The two microservices communicate each other either 
+1.  Synchronous(When the client send request it waits for the response from the services) way like using RestTemplate 
+    (HTTP Protocol) .The main important point is the (Http/Https) protocol is a synchronous and the client code can only continue its task when it receives the
+    Http server response.
+	Spring boot supports calling one rest service to another rest service using the RestTemplate class. RestTemplate is a synchronised client side 
+	class that is responsible for calling another rest service. RestTemplate supports all HTTP methods such as GET, POST, DELET, PUT, HEAD, etc.
+
+

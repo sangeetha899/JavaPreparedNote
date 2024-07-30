@@ -1,0 +1,51 @@
+JPA --- Jakarta persistance API (or) Java persistance API
+    JPA is a specification
+ORM-- Object Relational Mapping
+    ORM means relations between objects representing entities in the database 
+Hibernate	-- Framework (an implementation)
+JPA is a specification that is defined by JAVA for object-relational mapping.
+
+With this specification, Hibernate provides us a collection of classes and methods for data persistence.
+
+By using @Entity annotation we make a plain JAVA class into a persistent class.
+
+We have added @GeneratedValue annotation to the Id variable. 
+This annotation is used to specify the strategy to generate the value of the primary key ( id).
+ We have used GenerationType.IDENTITY to the primary key — this is the same as AUTO_INCREMENT of MySQL.
+ 
+ To consume JSON data sent by clients, annotate a method parameter with @RequestBody. 
+ Spring Boot will automatically deserialize the incoming JSON into a Java object.
+ 
+ 
+ Hibernate:
+ OneToOne(Bidirectional):https://codenicetomedear.blogspot.com/2022/02/one-to-one-bi-directional-relationship.html
+ 
+ Three Mapping:
+ i)one-to-one mapping---
+ ii)one-to-many mapping----https://www.baeldung.com/hibernate-one-to-many
+ iii)many-to-many mapping
+ 
+ Two types of Authentication:
+ url:https://javatechonline.com/how-to-implement-jwt-authentication-in-spring-boot-project/
+ 1.Stateful Authentication
+ 2.Stateless Authentication
+ 
+ 1.Stateful Authentication:
+     In this type of Authentication, there is a session management involved between client & server. When a client requests for a service from a 
+	 server, it first logins to the server. Then server creates a session and stores this information in the form of key – value pairs. This session
+	 is a kind of memory at server side. We also call it HttpSession as Http protocol manages it. Further, in response to client requests, 
+	 the server provides a session id with the response in the form of Cookie to the client. That cookie gets stored in the client browser. When same 
+	 client makes request for the second time, cookie also comes with the request header. Consequently, the server checks the request header and 
+	 if it finds the same SID (Session id) in the cookie it assumes that the request came from the same client. In this way session management
+	 happens.When a client logs out from the server, the session gets destroyed accordingly. As a result, the server removes the session information (key-value)
+     from the memory accordingly. Equally important, For every new client, the server creates a new session(memory).
+	 
+ 2.Stateless Authentication:
+     When a client sends a request to the server for a service, it first logins to the server. Consequently, the server generates a token 
+	 (data in encoded format) and sends to the client with the response. While making second request, Client sends the same token along with the 
+	 request to the server. Now, the server reads token from the request and validates the token. In fact, from the first request server checks the 
+	 valid login(credentials) of the client. If it is a valid login, then only, server creates a token.Furthermore, on the second request it validates the token. If the token is valid it sends the requested response, 
+	 otherwise asks the client to login again. However, every token will have a valid time period, such as 30 minutes, 1 hour etc. Based on business requirements, token validity period can be configured.
+     In case of Token, there is no concept of logout. Instead, the client can make a request & get the response until the token expires. 
+	 
+	 JWT has three parts : Header, Payload & Signature.
