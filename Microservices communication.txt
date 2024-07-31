@@ -38,3 +38,37 @@ Employee[] employee = restTemplate.build()
 return Arrays.asList(employee);
 
 }
+
+Detailed Explanation of DTO with Example: https://medium.com/learnwithnk/best-practices-in-spring-boot-project-structure-layers-of-microservice-versioning-in-api-cadf62bd3459
+
+Q.No: 1 How many Requests can spring boot handle Simultaneously?
+
+Answer: There are three web containers in springboot i)Tomcat ii)Jetty iii) Undertow.Among these three,tomcat is the 
+default web container for the Spring boot framework
+Jetty is an open-source, lightweight web server and Servlet container maintained by the Eclipse Foundation.
+Taking Tomcat, the default web container for the Spring Boot framework
+https://medium.com/@haiou-a/spring-boot-how-many-requests-can-spring-boot-handle-simultaneously-a57b41bdba6a
+
+Complete java project(jasper Report,Gmail) Github link: https://github.com/pmoustopoulos/department-api/tree/master/src/main/java/com/ainigma100/departmentapi
+
+Two microservices:https://medium.com/ms-club-of-sliit/lets-build-a-microservice-with-spring-boot-faf39b968857
+
+------------------DTO Class In Java:------------------
+ when a service layer needs to send data to the presentation layer, it packages the data into a DTO. The DTO contains only the necessary information needed by the presentation layer, 
+ without any unnecessary data that would slow down the application’s performance.
+ Let’s say you’re using an e-commerce website to purchase a product. When you select a product, the service layer retrieves the relevant data from a database and packages it into a DTO. The DTO will only contain the essential product details such as name,
+ description, and price. The presentation layer then receives the DTO and displays the product information to you. The DTO acts as an intermediary between the service layer and the presentation layer, 
+ reducing the amount of data transferred and improving performance.
+ 
+ ---Difference between Entity and DTO class-----
+ Entities are objects that represent the state of data in a database and are typically used to implement the persistence layer of an application. They include properties that map to columns in a database table, 
+ as well as methods for accessing and manipulating the data. Entities are typically designed to be persistent, meaning that their state can be stored and retrieved from a database.
+
+DTOs, on the other hand, are used for data transfer between layers of an application and are not concerned with persistence. They are designed to be simple and lightweight, without any business logic, and include only the 
+data needed for the specific needs of each layer. DTOs are typically used to transfer data from a service layer to a presentation layer or between microservices.
+
+In general, it’s appropriate to use entities when working with the persistence layer and to use DTOs when transferring data between layers or microservices. 
+
+Referral Link of DTO: https://saranganjana.medium.com/data-transfer-object-dto-in-java-66c4f3075362
+
+Referral link for springboot Architecture: https://levelup.gitconnected.com/understanding-spring-boot-architecture-6083e2631bc6
