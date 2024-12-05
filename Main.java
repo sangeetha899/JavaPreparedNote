@@ -1,5 +1,5 @@
 package org.example;
-
+//program to find frequency of each character using java 8 stream API
 
 import java.util.Map;
 import java.util.function.Function;
