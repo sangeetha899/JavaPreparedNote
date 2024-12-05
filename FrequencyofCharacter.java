@@ -1,7 +1,8 @@
 package org.example;
-//program to find frequency of each character using java 8 stream API
+
 
 import java.util.Map;
+import java.util.TreeMap;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -12,7 +13,8 @@ public class Main {
       Map<Character,Long> frequencyMap= input.chars()//covert each character into stream of IntStreams [j-118,a-97,v-78,a-98] ASCII value of each alphabet
                .filter(c->!Character.isWhitespace(c)) // Exclude space
                .mapToObj(c->(char) c) // Convert to Stream<Character>
-               .collect(Collectors.groupingBy(Function.identity(),// Group by character
+               .collect(Collectors.groupingBy(Function.identity(), // Classifier function (group by the character itself)
+                       TreeMap::new, // Use TreeMap for sorted keys
                        Collectors.counting()));// Count occurrences as Integer
 
        // Collectors.groupingBy(Function.identity(), ...):
